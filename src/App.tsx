@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 import { ExampleMenu } from 'examples/menu';
@@ -54,5 +53,4 @@ function Entry() {
   );
 }
 
-const rootElement = document.getElementById('root');
-ReactDOM.render(<Entry />, rootElement);
+export default Entry;
