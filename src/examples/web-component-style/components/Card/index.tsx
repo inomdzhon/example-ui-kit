@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import useSlot from 'ui-kit/Slot/useHooks';
+import useSlot from 'ui-kit/Slot/useSlot';
 
 import './index.css';
 
