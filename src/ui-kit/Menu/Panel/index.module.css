@@ -1,0 +1,77 @@
+.panel {
+  display: flex;
+  width: 100%;
+  height: 56px;
+  border-top: 1px solid #192431;
+  border-bottom: 1px solid #192431;
+  background-color: #243445;
+}
+
+.panel-slot {
+}
+
+.panel_is_sticky {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  align-self: flex-start;
+  backface-visibility: hidden;
+}
+
+.panel-slot_pos_left {
+  flex-shrink: 0;
+  width: 56px;
+}
+
+.panel-slot_pos_center {
+  flex-grow: 1;
+}
+
+.panel-slot_pos_right {
+  flex-shrink: 0;
+  width: 56px;
+}
+
+.panel-control {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  outline: none;
+  background-color: transparent;
+  color: #fff;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.panel-control:hover {
+  color: #2bbafd;
+}
+
+.panel-slot_pos_left .panel-control {
+  border-right: 1px solid #192431;
+}
+
+.panel-slot_pos_right .panel-control {
+  border-left: 1px solid #192431;
+}

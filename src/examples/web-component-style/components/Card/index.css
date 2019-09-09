@@ -1,0 +1,41 @@
+.card {
+  width: 300px;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1em;
+}
+
+.card__name {
+  padding: 0 0 0.2em 0;
+  margin: 0 0 1em 0;
+  border-bottom: 1px solid #ff3e00;
+}
+
+.card__address,
+.card__email {
+  padding-left: 30px;
+  background: 0 0 no-repeat;
+  background-size: 24px 24px;
+  line-height: 24px;
+}
+
+.card__address {
+  background-image: url(https://img.icons8.com/material-two-tone/24/000000/map-marker.png);
+}
+
+.card__email {
+  background-image: url(https://img.icons8.com/material-two-tone/24/000000/email-open.png);
+}
+
+.card__footer {
+  padding: 8px 0;
+  margin: 4px 0;
+  border-top: 1px solid #ff3e00;
+  border-bottom: 1px solid #ff3e00;
+}
+
+
+.card__missing {
+  color: #999;
+}
