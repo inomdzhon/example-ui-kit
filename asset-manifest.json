@@ -1,13 +1,13 @@
 {
-  "main.css": "/example-ui-kit/static/css/main.12709616.chunk.css",
-  "main.js": "/example-ui-kit/static/js/main.5eac10bb.chunk.js",
-  "main.js.map": "/example-ui-kit/static/js/main.5eac10bb.chunk.js.map",
-  "static/js/1.25e7a2d8.chunk.js": "/example-ui-kit/static/js/1.25e7a2d8.chunk.js",
-  "static/js/1.25e7a2d8.chunk.js.map": "/example-ui-kit/static/js/1.25e7a2d8.chunk.js.map",
-  "runtime~main.js": "/example-ui-kit/static/js/runtime~main.bc0889df.js",
-  "runtime~main.js.map": "/example-ui-kit/static/js/runtime~main.bc0889df.js.map",
-  "static/css/main.12709616.chunk.css.map": "/example-ui-kit/static/css/main.12709616.chunk.css.map",
+  "main.css": "/example-ui-kit/static/css/main.8195bae0.chunk.css",
+  "main.js": "/example-ui-kit/static/js/main.8bb800bf.chunk.js",
+  "main.js.map": "/example-ui-kit/static/js/main.8bb800bf.chunk.js.map",
+  "runtime~main.js": "/example-ui-kit/static/js/runtime~main.ed0cb2aa.js",
+  "runtime~main.js.map": "/example-ui-kit/static/js/runtime~main.ed0cb2aa.js.map",
+  "static/js/2.89854e73.chunk.js": "/example-ui-kit/static/js/2.89854e73.chunk.js",
+  "static/js/2.89854e73.chunk.js.map": "/example-ui-kit/static/js/2.89854e73.chunk.js.map",
   "index.html": "/example-ui-kit/index.html",
-  "precache-manifest.7491576816e5125ae6ed30212293f499.js": "/example-ui-kit/precache-manifest.7491576816e5125ae6ed30212293f499.js",
-  "service-worker.js": "/example-ui-kit/service-worker.js"
+  "precache-manifest.29befec94dfa0023f231975b15fb32c1.js": "/example-ui-kit/precache-manifest.29befec94dfa0023f231975b15fb32c1.js",
+  "service-worker.js": "/example-ui-kit/service-worker.js",
+  "static/css/main.8195bae0.chunk.css.map": "/example-ui-kit/static/css/main.8195bae0.chunk.css.map"
 }
