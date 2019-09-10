@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+import { Router, Route, Link } from 'react-router-dom';
 
 import { ExampleMenu } from 'examples/menu';
 import { ExampleSubcomponentStyle } from 'examples/sub-component-style';
@@ -45,7 +46,7 @@ function withCommonWrapper<T>(Component: React.ComponentType) {
 
 function Entry() {
   return (
-    <BrowserRouter>
+    <Router history={createBrowserHistory()}>
       <Route path="/example-menu" component={withCommonWrapper(ExampleMenu)} />
       <Route
         path="/sub-component-style"
@@ -60,7 +61,7 @@ function Entry() {
         component={withCommonWrapper(ExampleUiStyleConfig)}
       />
       <Route path="/" component={App} exact={true} />
-    </BrowserRouter>
+    </Router>
   );
 }
 
