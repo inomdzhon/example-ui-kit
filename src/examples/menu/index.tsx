@@ -23,7 +23,7 @@ export function ExampleMenu() {
       <button onClick={handleMenuClose}>Open menu</button>
       <Menu open={menuOpen} onClose={handleMenuClose}>
         <Menu.Header
-          leftSlot={<IconCross />}
+          leftSlot={<IconCross onClick={handleMenuClose} />}
           centerSlot={<div className="logo" />}
           isSticky={true}
         />

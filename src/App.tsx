@@ -10,22 +10,26 @@ import { ExampleUiStyleConfig } from 'examples/ui-style-config';
 // inject ui-kit colors
 import 'ui-kit/colors.css';
 
+function getUrl(path: string): string {
+  return `${process.env.PUBLIC_URL}${path}`;
+}
+
 function App() {
   return (
     <div>
       <h1>Examples</h1>
       <ul>
         <li>
-          <Link to="/example-menu">ExampleMenu</Link>
+          <Link to={getUrl("/example-menu")}>ExampleMenu</Link>
         </li>
         <li>
-          <Link to="/sub-component-style">Sub-component style</Link>
+          <Link to={getUrl("/sub-component-style")}>Sub-component style</Link>
         </li>
         <li>
-          <Link to="/web-component-style">Web Component Style</Link>
+          <Link to={getUrl("/web-component-style")}>Web Component Style</Link>
         </li>
         <li>
-          <Link to="/ui-style-config">UI Style Config</Link>
+          <Link to={getUrl("/ui-style-config")}>UI Style Config</Link>
         </li>
       </ul>
     </div>
@@ -36,7 +40,7 @@ function withCommonWrapper<T>(Component: React.ComponentType) {
   return function WithCommonWrapper(props: T) {
     return (
       <React.Fragment>
-        <Link to="/">Back to all examples</Link>
+        <Link to={getUrl("/")}>Back to all examples</Link>
         <hr />
         <Component {...props} />
       </React.Fragment>
@@ -47,20 +51,20 @@ function withCommonWrapper<T>(Component: React.ComponentType) {
 function Entry() {
   return (
     <Router history={createBrowserHistory()}>
-      <Route path="/example-menu" component={withCommonWrapper(ExampleMenu)} />
+      <Route path={getUrl("/example-menu")} component={withCommonWrapper(ExampleMenu)} />
       <Route
-        path="/sub-component-style"
+        path={getUrl("/sub-component-style")}
         component={withCommonWrapper(ExampleSubcomponentStyle)}
       />
       <Route
-        path="/web-component-style"
+        path={getUrl("/web-component-style")}
         component={withCommonWrapper(ExampleWebComponentStyle)}
       />
       <Route
-        path="/ui-style-config"
+        path={getUrl("/ui-style-config")}
         component={withCommonWrapper(ExampleUiStyleConfig)}
       />
-      <Route path="/" component={App} exact={true} />
+      <Route path={getUrl("/")} component={App} exact={true} />
     </Router>
   );
 }
