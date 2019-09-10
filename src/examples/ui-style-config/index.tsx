@@ -32,7 +32,12 @@ const ButtonCSSProperties = [
   '--background-hover',
   '--background-focused',
   '--background-activated',
+  '--background-disabled',
   '--color',
+  '--color-hover',
+  '--color-focused',
+  '--color-activated',
+  '--color-disabled',
 ];
 
 function getDefaultPropertyValue(name: string, elem: any): string {

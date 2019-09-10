@@ -1,0 +1,52 @@
+.ui-button {
+  --background: initial;
+  --background-hover: initial;
+  --background-focused: initial;
+  --background-activated: initial;
+  --background-disabled: rgba(123, 123, 123, 0.2);
+  --color: initial;
+  --color-hover: initial;
+  --color-focused: initial;
+  --color-activated: initial;
+  --color-disabled: rgb(123, 123, 123);
+
+  background-color: var(--background);
+  color: var(--color);
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var(--background-hover);
+      color: var(--color-hover);
+    }
+  }
+
+  &:focus {
+    background-color: var(--background-focused);
+    color: var(--color-focused);
+  }
+
+  &_color_primary {
+    --background: var(--global-primary-light);
+    --background-hover: var(--global-primary-main);
+    --background-focused: var(--global-primary-dark);
+    --background-activated: var(--global-primary-dark);
+    --color: var(--global-primary-contrast);
+    --color-hover: var(--global-primary-contrast);
+    --color-focused: var(--global-primary-contrast);
+    --color-activated: var(--global-primary-contrast);
+    --color-disabled: var(--global-primary-contrast);
+  }
+
+  &_color_secondary {
+    --background: var(--global-secondary-light);
+    --background-hover: var(--global-secondary-main);
+    --background-focused: var(--global-secondary-dark);
+    --background-activated: var(--global-secondary-dark);
+    --color: var(--global-primary-contrast);
+    --color-hover: var(--global-primary-contrast);
+    --color-focused: var(--global-primary-contrast);
+    --color-activated: var(--global-primary-contrast);
+    --color-disabled: var(--global-primary-contrast);
+  }
+}
+

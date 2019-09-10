@@ -22,7 +22,7 @@
 
 ## Пример
 
-```tsx
+```jsx
 import { IconCross } from "ui-kit/Icon";
 
 ...

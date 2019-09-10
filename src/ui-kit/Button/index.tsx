@@ -1,7 +1,7 @@
 import * as React from 'react';
 import clsx from 'clsx';
 
-import classes from './index.module.css';
+import classes from './index.module.scss';
 
 type TProps = {
   color?: 'primary' | 'secondary';

@@ -29,3 +29,29 @@
 | ------------ | ------------------------------ |
 | **Описание** | Отдаёт DOM элемент.            |
 | **Тип**      | `React.Ref` &#124; `undefined` |
+
+## Переопределение CSS св-в
+
+Если компонент имеет стилизацию, то он должен определить некоторые из стилей через `CSS Custom Properties` для возможности 
+переопределить их через другой компонент, если такое необходимо.
+
+На примере [Button](Button/README.md).
+
+```jsx
+// index.css
+.card__button {
+    --background: #000;
+    --color: #fff;
+}
+
+// index.tsx
+<div className="card">
+    <Button className="card__button" />
+</div>
+```
+
+Вот некоторые из `CSS Custom Properties`, которые необходимо предоставить:
+
+- `background`
+- `color`
+- `opacity`
