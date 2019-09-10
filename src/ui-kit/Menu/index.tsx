@@ -1,5 +1,5 @@
 import * as React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 
 import Context, { TContext } from './context';
 
@@ -49,7 +49,7 @@ class Menu extends React.Component<TProps> {
     return (
       <Context.Provider value={this.state}>
         <div
-          className={classNames(classes['menu'], {
+          className={clsx(classes['menu'], {
             [classes['menu_state_open']]: open,
           })}
           ref={hostRef}

@@ -4,6 +4,10 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 import { ExampleMenu } from 'examples/menu';
 import { ExampleSubcomponentStyle } from 'examples/sub-component-style';
 import { ExampleWebComponentStyle } from 'examples/web-component-style';
+import { ExampleUiStyleConfig } from 'examples/ui-style-config';
+
+// inject ui-kit colors
+import 'ui-kit/colors.css';
 
 function App() {
   return (
@@ -18,6 +22,9 @@ function App() {
         </li>
         <li>
           <Link to="/web-component-style">Web Component Style</Link>
+        </li>
+        <li>
+          <Link to="/ui-style-config">UI Style Config</Link>
         </li>
       </ul>
     </div>
@@ -47,6 +54,10 @@ function Entry() {
       <Route
         path="/web-component-style"
         component={withCommonWrapper(ExampleWebComponentStyle)}
+      />
+      <Route
+        path="/ui-style-config"
+        component={withCommonWrapper(ExampleUiStyleConfig)}
       />
       <Route path="/" component={App} exact={true} />
     </BrowserRouter>

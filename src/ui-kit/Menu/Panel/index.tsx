@@ -1,5 +1,5 @@
 import * as React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 
 import classes from './index.module.css';
 
@@ -15,12 +15,12 @@ function Panel(props: TProps) {
 
   return (
     <div
-      className={classNames(classes['panel'], {
+      className={clsx(classes['panel'], {
         [classes['panel_is_sticky']]: isSticky,
       })}
     >
       <div
-        className={classNames(
+        className={clsx(
           classes['panel-slot'],
           classes['panel-slot_pos_left'],
         )}
@@ -30,7 +30,7 @@ function Panel(props: TProps) {
         ) : null}
       </div>
       <div
-        className={classNames(
+        className={clsx(
           classes['panel-slot'],
           classes['panel-slot_pos_center'],
         )}
@@ -40,7 +40,7 @@ function Panel(props: TProps) {
         ) : null}
       </div>
       <div
-        className={classNames(
+        className={clsx(
           classes['panel-slot'],
           classes['panel-slot_pos_right'],
         )}

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 
 import classes from './index.module.css';
 
@@ -14,7 +14,7 @@ function List(props: TProps) {
 
   return (
     <ul
-      className={classNames(classes['list'], {
+      className={clsx(classes['list'], {
         [classes['list_has_gaps']]: hasGaps,
         [classes['list_has_seperator']]: hasSeparator,
       })}

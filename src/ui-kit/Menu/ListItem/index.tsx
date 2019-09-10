@@ -1,5 +1,5 @@
 import * as React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 
 import Context from '../context';
 
@@ -48,7 +48,7 @@ function ListItem(props: TProps) {
     <li className={classes['list-item']}>
       <a
         href={href}
-        className={classNames(classes['list-item-link'], {
+        className={clsx(classes['list-item-link'], {
           [classes[`list-item-link_font-size_small`]]: fontSize === 'small',
           [classes[`list-item-link_font-size_medium`]]: fontSize === 'medium',
           [classes[`list-item-link_font-size_large`]]: fontSize === 'large',
