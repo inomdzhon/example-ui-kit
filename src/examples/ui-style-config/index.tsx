@@ -2,6 +2,8 @@ import * as React from 'react';
 
 import Menu from 'ui-kit/Menu';
 
+import classes from './index.module.css';
+
 // icons
 import {
   IconCross,
@@ -11,23 +13,33 @@ import {
   IconAnalytics,
 } from 'ui-kit/Icon';
 
-import Button from 'ui-kit/Button';
+import Button, {
+  TCustomProperties as TButtonCustomProperties,
+} from 'ui-kit/Button';
 import { ChangeEventHandler } from 'react';
 import { EventHandler } from 'react';
 import { ChangeEvent } from 'react';
 
-const GlobalCSSProperties = [
-  '--global-primary-light',
-  '--global-primary-main',
-  '--global-primary-dark',
-  '--global-primary-contrast',
-  '--global-secondary-light',
-  '--global-secondary-main',
-  '--global-secondary-dark',
-  '--global-secondary-contrast',
+const UICustomProperties = [
+  '--ui-accent-light',
+  '--ui-accent-main',
+  '--ui-accent-dark',
+  '--ui-accent-contrast-text',
+  '--ui-positive-light',
+  '--ui-positive-main',
+  '--ui-positive-dark',
+  '--ui-positive-contrast-text',
+  '--ui-negative-light',
+  '--ui-negative-main',
+  '--ui-negative-dark',
+  '--ui-negative-contrast-text',
+  '--ui-warning-light',
+  '--ui-warning-main',
+  '--ui-warning-dark',
+  '--ui-warning-contrast-text',
 ];
 
-const ButtonCSSProperties = [
+const ButtonCustomProperties = [
   '--background',
   '--background-hover',
   '--background-focused',
@@ -51,11 +63,13 @@ function getDefaultPropertyValue(name: string, elem: any): string {
 
 export function ExampleUiStyleConfig() {
   const elemRoot = React.createRef<HTMLDivElement>();
-  const elemFirstButton = React.createRef<HTMLButtonElement>();
+  const [buttonCustomColor, setButtonCustomColor] = React.useState<
+    TButtonCustomProperties
+  >({});
   const [palette, togglePalette] = React.useState<any>();
 
   React.useEffect(() => {
-    GlobalCSSProperties.forEach(propertyName => {
+    UICustomProperties.forEach(propertyName => {
       if (!elemRoot.current) {
         return;
       }
@@ -68,60 +82,77 @@ export function ExampleUiStyleConfig() {
   }, []);
 
   function handleColorChange(event: React.ChangeEvent<HTMLInputElement>) {
-    const CSSPropertyName = event.target.getAttribute('name');
-    elemRoot.current!.style.setProperty(CSSPropertyName!, event.target.value);
+    const CSSPropertyName = event.target.getAttribute('name')!;
+    elemRoot.current!.querySelector<HTMLElement>(
+      `#color-box${CSSPropertyName}`,
+    )!.style.backgroundColor = event.target.value;
+    elemRoot.current!.style.setProperty(CSSPropertyName, event.target.value);
+    elemRoot.current!.style.setProperty(CSSPropertyName, event.target.value);
   }
 
   function handleColorButtonChange(event: React.ChangeEvent<HTMLInputElement>) {
     const CSSPropertyName = event.target.getAttribute('name');
-    elemFirstButton.current!.style.setProperty(CSSPropertyName!, event.target.value);
+    setButtonCustomColor({
+      ...buttonCustomColor,
+      [CSSPropertyName!]: event.target.value,
+    });
   }
 
   return (
     <div ref={elemRoot}>
-      <Button hostRef={elemFirstButton} color="primary">
-        Button
-      </Button>
-      <br />
-      <br />
-      <Button color="secondary">Button</Button>
-      <br />
-      <br />
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-      }}>
+      <div className={classes['space-between']}>
+        <Button styleConfig={buttonCustomColor} color="accent">
+          Accent
+        </Button>
+        <Button color="positive">Positive</Button>
+        <Button color="negative">Negative</Button>
+        <Button color="warning">Warning</Button>
+      </div>
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+        }}
+      >
         <div style={{ border: '1px dashed' }}>
-          <h2>Global style</h2>
-          {GlobalCSSProperties.map(propertyName => (
-            <p key={propertyName}>
-              <label htmlFor={propertyName}>{propertyName}: </label>
-              <input
-                id={propertyName}
-                type="text"
-                name={propertyName}
-                defaultValue={getDefaultPropertyValue(
-                  propertyName,
-                  document.documentElement,
-                )}
-                onChange={handleColorChange}
-              />
-            </p>
-          ))}
+          <h2>UI custom properties</h2>
+          {UICustomProperties.map(propertyName => {
+            const defaultColor = getDefaultPropertyValue(
+              propertyName,
+              document.documentElement,
+            );
+            return (
+              <p key={propertyName}>
+                <label htmlFor={propertyName}>
+                  <code className={classes['code']}>{propertyName}: </code>
+                </label>
+                <input
+                  id={propertyName}
+                  type="text"
+                  name={propertyName}
+                  defaultValue={defaultColor}
+                  onChange={handleColorChange}
+                />
+                <span
+                  id={`color-box${propertyName}`}
+                  className={classes['color-box']}
+                  style={{ backgroundColor: defaultColor }}
+                />
+              </p>
+            );
+          })}
         </div>
         <div style={{ border: '1px dashed' }}>
-          <h2>Button style</h2>
-          {ButtonCSSProperties.map(propertyName => (
+          <h2>Button custom properties</h2>
+          {ButtonCustomProperties.map(propertyName => (
             <p key={propertyName}>
-              <label htmlFor={propertyName}>{propertyName}: </label>
+              <label htmlFor={propertyName}>
+                <code className={classes['code']}>{propertyName}: </code>
+              </label>
               <input
                 id={propertyName}
                 type="text"
                 name={propertyName}
-                defaultValue={getDefaultPropertyValue(
-                  propertyName,
-                  elemFirstButton.current,
-                )}
                 onChange={handleColorButtonChange}
               />
             </p>

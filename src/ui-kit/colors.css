@@ -1,21 +1,21 @@
 :root {
-  --global-primary-light: #0094ff;
-  --global-primary-main: #33a9ff;
-  --global-primary-dark: #0076cc;
-  --global-primary-contrast: #ffffff;
+  --ui-accent-dark: #0094ff;
+  --ui-accent-main: #0076cc;
+  --ui-accent-light: #33a9ff;
+  --ui-accent-contrast-text: #ffffff;
 
-  --global-secondary-light: #1fbf75;
-  --global-secondary-main: #35df90;
-  --global-secondary-dark: #18955b;
-  --global-secondary-contrast: #ffffff;
+  --ui-positive-dark: #18955b;
+  --ui-positive-main: #1fbf75;
+  --ui-positive-light: #35df90;
+  --ui-positive-contrast-text: #ffffff;
 
-  --global-warning-light: #f9b42e;
-  --global-warning-main: #fac661;
-  --global-warning-dark: #ee9f07;
-  --global-warning-contrast: #ffffff;
+  --ui-negative-dark: #e1310f;
+  --ui-negative-main: #f15131;
+  --ui-negative-light: #f47961;
+  --ui-negative-contrast-text: #ffffff;
 
-  --global-danger-light: #f15131;
-  --global-danger-main: #f47961;
-  --global-danger-dark: #e1310f;
-  --global-danger-contrast: #ffffff;
+  --ui-warning-dark: #ee9f07;
+  --ui-warning-main: #f9b42e;
+  --ui-warning-light: #fac661;
+  --ui-warning-contrast-text: #ffffff;
 }

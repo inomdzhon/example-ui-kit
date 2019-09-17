@@ -13,6 +13,12 @@
   background-color: var(--background);
   color: var(--color);
 
+  padding: 0 24px;
+  height: 56px;
+  font-size: 24px;
+  line-height: 56px;
+  outline: none;
+
   @media (any-hover: hover) {
     &:hover {
       background-color: var(--background-hover);
@@ -25,28 +31,52 @@
     color: var(--color-focused);
   }
 
-  &_color_primary {
-    --background: var(--global-primary-light);
-    --background-hover: var(--global-primary-main);
-    --background-focused: var(--global-primary-dark);
-    --background-activated: var(--global-primary-dark);
-    --color: var(--global-primary-contrast);
-    --color-hover: var(--global-primary-contrast);
-    --color-focused: var(--global-primary-contrast);
-    --color-activated: var(--global-primary-contrast);
-    --color-disabled: var(--global-primary-contrast);
+  &_color_accent {
+    --background: var(--ui-accent-main);
+    --background-hover: var(--ui-accent-light);
+    --background-focused: var(--ui-accent-dark);
+    --background-activated: var(--ui-accent-dark);
+    --color: var(--ui-accent-contrast-text);
+    --color-hover: var(--ui-accent-contrast-text);
+    --color-focused: var(--ui-accent-contrast-text);
+    --color-activated: var(--ui-accent-contrast-text);
+    --color-disabled: var(--ui-accent-contrast-text);
   }
 
-  &_color_secondary {
-    --background: var(--global-secondary-light);
-    --background-hover: var(--global-secondary-main);
-    --background-focused: var(--global-secondary-dark);
-    --background-activated: var(--global-secondary-dark);
-    --color: var(--global-primary-contrast);
-    --color-hover: var(--global-primary-contrast);
-    --color-focused: var(--global-primary-contrast);
-    --color-activated: var(--global-primary-contrast);
-    --color-disabled: var(--global-primary-contrast);
+  &_color_positive {
+    --background: var(--ui-positive-main);
+    --background-hover: var(--ui-positive-light);
+    --background-focused: var(--ui-positive-dark);
+    --background-activated: var(--ui-positive-dark);
+    --color: var(--ui-positive-contrast-text);
+    --color-hover: var(--ui-positive-contrast-text);
+    --color-focused: var(--ui-positive-contrast-text);
+    --color-activated: var(--ui-positive-contrast-text);
+    --color-disabled: var(--ui-positive-contrast-text);
+  }
+
+  &_color_negative {
+    --background: var(--ui-negative-main);
+    --background-hover: var(--ui-negative-light);
+    --background-focused: var(--ui-negative-dark);
+    --background-activated: var(--ui-negative-dark);
+    --color: var(--ui-negative-contrast-text);
+    --color-hover: var(--ui-negative-contrast-text);
+    --color-focused: var(--ui-negative-contrast-text);
+    --color-activated: var(--ui-negative-contrast-text);
+    --color-disabled: var(--ui-negative-contrast-text);
+  }
+
+  &_color_warning {
+    --background: var(--ui-warning-main);
+    --background-hover: var(--ui-warning-light);
+    --background-focused: var(--ui-warning-dark);
+    --background-activated: var(--ui-warning-dark);
+    --color: var(--ui-warning-contrast-text);
+    --color-hover: var(--ui-warning-contrast-text);
+    --color-focused: var(--ui-warning-contrast-text);
+    --color-activated: var(--ui-warning-contrast-text);
+    --color-disabled: var(--ui-warning-contrast-text);
   }
 }
 
