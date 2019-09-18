@@ -1,0 +1,59 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 80px auto;
+  grid-template-areas: 'tab-bar content';
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: #fff;
+}
+
+@media (max-width: 579px) {
+  .page {
+    grid-template-rows: auto 56px;
+    grid-template-columns: initial;
+    grid-template-areas: 'content' 'tab-bar';
+  }
+}
+
+.page__tab-bar {
+  grid-area: tab-bar;
+}
+
+.page__content {
+  grid-area: content;
+}
+
+.tab-bar {
+  height: 100%;
+  padding: 8px;
+  background: #202e3e;
+  box-sizing: border-box;
+}
+
+.content {
+  height: 100%;
+  padding: 8px;
+  background: #243445;
+  box-sizing: border-box;
+}
